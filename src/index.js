@@ -227,7 +227,7 @@ app.put("/progress", async (req, res) => {
 // ✅ GET endpoint to get all progress
 app.get("/progress", async (req, res) => {
   try {
-    const progress = await ActivityPage.find();
+    const progress = await ActivityPage.find({}, { _id: 0 ,id:0});
     res.json(progress);
   } catch (error) {
     res.status(500).json({ success: false, message: "Failed to fetch data" });
