@@ -7,6 +7,88 @@ import ActivityPage from "./models/activityPage.model.js"; // (optional use late
 const app = express();
 const port = 3000;
 
+const data=[
+{
+    "activity_page_id": 1,
+    "pagename": "Intro",
+    "per": 0.0,
+    "iaccountid": 10,
+    "istatus": 1,
+    "completed": 0,
+    "incompleted": 0,
+    "total": 0,
+  },
+  {
+    "activity_page_id": 2,
+    "pagename": "Info 1",
+    "per": 0.0,
+    "iaccountid": 10,
+    "istatus": 1,
+    "completed": 0,
+    "incompleted": 0,
+    "total": 0,
+  },
+  {
+    "activity_page_id": 3,
+    "pagename": "Info 2",
+    "per": 19.0,
+    "iaccountid": 10,
+    "istatus": 1,
+    "completed": 19,
+    "incompleted": 0,
+    "total": 0,
+  },
+  {
+    "activity_page_id": 4,
+    "pagename": "Info 3",
+    "per": 38.0,
+    "iaccountid": 10,
+    "istatus": 1,
+    "completed": 38,
+    "incompleted": 0,
+    "total": 0,
+  },
+  {
+    "activity_page_id": 5,
+    "pagename": "Info 4",
+    "per": 57.0,
+    "iaccountid": 10,
+    "istatus": 1,
+    "completed": 57,
+    "incompleted": 0,
+    "total": 0,
+  },
+  {
+    "activity_page_id": 6,
+    "pagename": "Info 5",
+    "per": 76.0,
+    "iaccountid": 10,
+    "istatus": 1,
+    "completed": 76,
+    "incompleted": 0,
+    "total": 0,
+  },
+  {
+    "activity_page_id": 7,
+    "pagename": "Review ",
+    "per": 95.0,
+    "iaccountid": 10,
+    "istatus": 1,
+    "completed": 95,
+    "incompleted": 0,
+    "total": 0,
+  },
+  {
+    "activity_page_id": 8,
+    "pagename": "Outro  ",
+    "per": 100.0,
+    "iaccountid": 10,
+    "istatus": 1,
+    "completed": 100,
+    "incompleted": 0,
+    "total": 0,
+  },
+];
 
 
 app.use(bodyParser.json());
@@ -223,6 +305,12 @@ app.put("/progress", async (req, res) => {
     res.status(500).json({ success: false, message: "Server error", error });
   }
 });
+
+app.get("/progressdata", async (req, res) => {
+  res.json(data);
+});
+
+
 
 // ✅ GET endpoint to get all progress
 app.get("/progress", async (req, res) => {
